@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/aos-master/dist/aos.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </head>
+  <style>
+    .slider {
+      mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+      );
+    }
+    .ad_image {
+      animation-name: scrollleft;
+      animation-duration: 30s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      /* margin: 0px 10px; */
+      left: 100%;
+    }
+    @keyframes scrollleft {
+      to {
+        left: -250px;
+      }
+    }
+    .ad_image1 {
+      animation-delay: calc(30s / 6 * (6 - 1) * -1);
+    }
+    .ad_image2 {
+      animation-delay: calc(30s / 6 * (6 - 2) * -1);
+    }
+    .ad_image3 {
+      animation-delay: calc(30s / 6 * (6 - 3) * -1);
+    }
+    .ad_image4 {
+      animation-delay: calc(30s / 6 * (6 - 4) * -1);
+    }
+    .ad_image5 {
+      animation-delay: calc(30s / 6 * (6 - 5) * -1);
+    }
+    .ad_image6 {
+      animation-delay: calc(30s / 6 * (6 - 6) * -1);
+    }
+  </style>
+  <body>
+    <!-- main background  -->
+    <section id="home" class="min-h-[95vh] lg:min-h-screen bg-black">
+      <!-- header  -->
+      <header
+        class="flex md:-full sticky md:overflow-hidden z-[100] mx-auto bg-transparent px-[25px] items-center justify-between w-full h-[65px]"
+      >
+        <span
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          class="md:w-[15%] text-white font-extrabold text-xl text-start cursor-pointer w-[25%] py-[15px] h-[60px]"
+          >Vicmaro<span
+            style="
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+            "
+            class="text-orange-500 text-sm"
+            >Enteprise.</span
+          ></span
+        >
+        <nav
+          class="nav_links md:static md:min-h-fit h-screen md:w-auto md:items-center md:bg-transparent flex md:flex-row lg:bg-transparent bg-black w-[70%] duration-[0.5s] md:z-0 z-[100] text-start py-[15px] flex-col absolute top-[0%] left-[-100%]"
+        >
+          <span
+            class="md:w-[15%] text-white font-extrabold text-xl md:hidden block text-center cursor-pointer pl-[20px] w-[25%] py-[15px] h-[60px]"
+            >Vicmaro<span
+              style="
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
+                  'Trebuchet MS', sans-serif;
+              "
+              class="text-orange-500 text-sm"
+              >Enteprise.</span
+            ></span
+          >
+          <a
+            onclick="onToggleMenu(this)"
+            class="px-[15px] font-serif md:text-xs text-[14px] hover:text-orange-500 mx-[10px] duration-[1s] text-white rounded py-[15px]"
+            href="#home"
+            >Home</a
+          >
+          <a
+            onclick="onToggleMenu(this)"
+            class="px-[15px] font-serif md:text-xs text-[14px] hover:text-orange-500 duration-[1s] text-white rounded py-[15px] mx-[10px]"
+            href="#service"
+            >Service</a
+          >
+          <a
+            onclick="onToggleMenu(this)"
+            class="px-[15px] font-serif md:text-xs text-[14px] hover:text-orange-500 duration-[1s] text-white rounded py-[15px] mx-[10px]"
+            href="#about"
+            >About</a
+          >
+          <a
+            onclick="onToggleMenu(this)"
+            class="px-[15px] font-serif md:text-xs text-[14px] hover:text-orange-500 duration-[1s] text-white rounded py-[15px] mx-[10px]"
+            href="#gallery"
+            >Gallery</a
+          >
+          <a
+            onclick="onToggleMenu(this)"
+            class="px-[15px] font-serif md:text-xs text-[14px] hover:text-orange-500 duration-[1s] text-white rounded py-[15px] mx-[10px]"
+            href="#reviews"
+            >Reviews</a
+          >
+
+          <!-- <a
+        onclick="onToggleMenu(this)"
+        class="px-[15px] font-serif md:text-xs text-[14px] hover:text-yellow-600 duration-[1s] text-white rounded py-[15px] mx-[10px]"
+        href=""
+        >Collections</a
+      > -->
+        </nav>
+        <!-- <a
+      href="#contact"
+      class="w-[130px] text-center shadow-md shadow-sky-200 font-bold font-mono bg-sky-400 rounded-full cursor-pointer px-[10px] text-white py-[8px] hover:bg-white hover:text-black duration-[1s]"
+    >
+      Contact Me
+    </a> -->
+        <div class="lg:hidden sm:block md:hidden">
+          <span onclick=" onToggleMenu(this)"
+            ><ion-icon
+              class="text-orange-500 font-bold text-2xl align-middle"
+              name="menu-outline"
+            ></ion-icon
+          ></span>
+        </div>
+
+        <div class="hidden md:block">
+          <button
+            class="bg-orange-500 w-[100px] font-semibold flex place-content-center text-white duration-[0.5s] hover:bg-transparent hover:border border-orange-500 hover:text-orange-500 text-sm py-[7px] px-[10px] shadow rounded-2xl font-serif"
+          >
+            <a class="text-sm flex items-center" href="">Book Now </a>
+          </button>
+        </div>
+      </header>
+      <!-- header-ends  -->
+      <!-- hero section  -->
+      <section class="w-full pt-[10px] overflow-x-hidden">
+        <div class="w-[95%] mx-auto">
+          <div class="w-full flex place-content-center pt-[90px] lg:pt-0">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              class="md:w-[200px] rounded-2xl bg-gradient-to-tr from-neutral-600 to-neutral-950 p-[3px] text-center"
+            >
+              <p class="text-sm text-neutral-400 font-serif px-[5px]">
+                Professional Tiling Services
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col place-content-center text-center">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="text-white text-4xl xl:text-6xl md:text-[50px] text-center font-extrabold capitalize font-serif pt-[15px]"
+            >
+              Expert hands, perfect tiles, stunning spaces.
+            </h1>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              class="text-neutral-600 md:w-[500px] mx-auto text-[13px] pt-[6px]"
+            >
+              With years of experience and an eye for detail, we deliver
+              flawless tiling solutions that bring beauty and durability to
+              every surface. From floors to walls, our craftsmanship transforms
+              ordinary spaces into art.
+            </p>
+            <button
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              class="bg-orange-500 w-[200px] md:w-[140px] font-semibold flex place-content-center text-white duration-[0.5s] hover:bg-transparent hover:border border-orange-500 hover:text-orange-500 text-sm py-[8px] px-[10px] shadow rounded-2xl mx-auto mt-[10px]"
+            >
+              <a class="text-sm flex items-center" href="#gallery"
+                >View Services
+                <span class="text-xl px-[3px] flex align-middle"
+                  ><ion-icon
+                    class="align-middle"
+                    name="arrow-forward-circle-sharp"
+                  ></ion-icon></span
+              ></a>
+            </button>
+          </div>
+        </div>
+        <!-- images  -->
+        <div
+          class="flex items-center mt-[20px] md:mt-[10px] overflow-x-hidden px-[10px] relative h-[350px] md:h-[240px] slider w-[1800px] lg:w-full"
+        >
+          <img
+            class="ad_image ad_image1 absolute w-[320px] slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/tile1.webp"
+            alt=""
+          />
+          <img
+            class="ad_image ad_image2 w-[320px] absolute slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/tile2.webp"
+            alt=""
+          />
+          <img
+            class="ad_image ad_image3 w-[320px] absolute slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/tile3.jpg"
+            alt=""
+          />
+          <img
+            class="ad_image ad_image4 w-[320px] absolute slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/brick.jpg"
+            alt=""
+          />
+          <img
+            class="ad_image ad_image5 w-[320px] absolute slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/brick.webp"
+            alt=""
+          />
+          <img
+            class="ad_image ad_image6 w-[320px] absolute slide xl:w-[240px] lg:w-[220px] h-[300px] md:h-[230px] rounded-2xl"
+            src="image/brick3.jpg"
+            alt=""
+          />
+
+          <!-- <button
+            class="bg-neutral-700 absolute h-[40px] w-[40px] rounded-full flex place-content-center items-center left-[15px] hover:text-neutral-300 hover:bg-neutral-400 duration-[0.5s] text-white"
+          >
+            <span class="text-xl px-[3px] flex align-middle prev-btn"
+              ><ion-icon
+                class="align-middle"
+                name="arrow-back-circle-sharp"
+              ></ion-icon
+            ></span>
+          </button>
+          <button
+            class="bg-neutral-700 absolute h-[40px] w-[40px] rounded-full flex place-content-center items-center right-[10px] hover:bg-neutral-400 hover:text-neutral-300 duration-[0.5s]"
+          >
+            <span class="text-xl text-white px-[3px] flex align-middle next-btn"
+              ><ion-icon
+                class="align-middle"
+                name="arrow-forward-circle-sharp"
+              ></ion-icon
+            ></span>
+          </button> -->
+        </div>
+        <!-- images container end  -->
+      </section>
+      <!-- hero section ends  -->
+    </section>
+    <!-- main bg ends  -->
+    <section class="w-full pb-[60px] py-[30px] bg-black">
+      <div id="service" class="w-[95%] mx-auto pt-[40px]">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="500"
+          class="text-white font-serif text-center text-xl"
+        >
+          Our Tiling Services
+        </h2>
+        <!-- <p class="text-[13px] text-neutral-500 text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In sed ut
+          veritatis incidunt praesentium quas.
+        </p> -->
+        <div
+          class="w-full pt-[20px] grid md:grid-cols-2 lg:grid-cols-4 gap-3 grid-cols-1"
+        >
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            class="h-[400px] shadow-md shadow-orange-300 rounded-tl-3xl md:mt-[60px] lg:mt-[60px]"
+          >
+            <div class="h-[250px] rounded-tl-3xl">
+              <img
+                class="rounded-tl-3xl h-[inherit] w-full"
+                src="image/brick.webp"
+                alt=""
+              />
+            </div>
+            <div class="bg-orange-500 h-[150px]">
+              <h3
+                class="text-lg font-semibold text-center font-serif text-white pt-[10px]"
+              >
+                Tile Installation
+              </h3>
+              <p class="text-[13px] text-white text-center px-[5px]">
+                We handle every project with precision, ensuring every tile is
+                perfectly aligned and built to last. From kitchens to bathrooms,
+                our installation deliver flawless finishes
+              </p>
+            </div>
+          </div>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            class="h-[400px] shadow-md shadow-orange-300 rounded-t-3xl lg:mt-0"
+          >
+            <div class="h-[250px] rounded-t-3xl">
+              <img
+                class="rounded-t-3xl h-[inherit] w-full"
+                src="image/brick.jpg"
+                alt=""
+              />
+            </div>
+            <div class="bg-orange-500 h-[150px]">
+              <h3
+                class="text-lg font-semibold text-center font-serif text-white pt-[10px]"
+              >
+                Tile Repair & Replacement
+              </h3>
+              <p class="text-[13px] text-white text-center px-[5px]">
+                Cracked, chipped or outdated tiles? We restore your surfaces to
+                perfection. Our repair and replacement services bring back the
+                beauty and strength of your floors and walls
+              </p>
+            </div>
+          </div>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            class="h-[400px] shadow-md shadow-orange-300 rounded-t-3xl"
+          >
+            <div class="h-[250px] rounded-t-3xl">
+              <img
+                class="rounded-t-3xl h-[inherit] w-full"
+                src="image/tile3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="bg-orange-500 h-[150px]">
+              <h3
+                class="text-lg font-semibold text-center font-serif text-white pt-[10px]"
+              >
+                Grouting & Finishing
+              </h3>
+              <p class="text-[13px] text-white text-center px-[5px]">
+                A perfect tile job derserves a flawless finish. We provide
+                expert grouting and sealing that enhance your tiles's
+                durability, color and overall look.
+              </p>
+            </div>
+          </div>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            class="h-[400px] shadow-md shadow-orange-300 rounded-tr-3xl md:mt-[-60px] lg:mt-[60px]"
+          >
+            <div class="h-[250px] rounded-tr-3xl">
+              <img
+                class="rounded-tr-3xl h-[inherit] w-full"
+                src="image/tile2.webp"
+                alt=""
+              />
+            </div>
+            <div class="bg-orange-500 h-[150px]">
+              <h3
+                class="text-lg font-semibold text-center font-serif text-white pt-[10px]"
+              >
+                Custom Tile Design
+              </h3>
+              <p class="text-[13px] text-white text-center px-[5px]">
+                Turn your vision into reality with custom tile patterns and
+                layouts made just for you. whether mordern, classic or unique,
+                we design tiling solutions that reflect your personal style.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="w-full bg-orange-500 py-[20px]">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        class="w-[95%] mx-auto p-[10px] pt-[40px] bg-black md:h-[450px] mt-[40px] rounded-2xl"
+      >
+        <h2 class="text-white font-serif text-center text-xl capitalize">
+          What makes us different
+        </h2>
+        <p class="text-[13px] text-white text-center">
+          We believe in building long lasting relationships with our customers
+          and always treat them with respect and professionalism.
+        </p>
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-3 px-[5px]">
+          <div
+            class="md:h-[300px] h-[200px] mt-[20px] text-white flex flex-col place-content-end"
+          >
+            <span
+              class="text-3xl bg-orange-400 text-white w-[60px] h-[60px] flex items-center place-content-center rounded-2xl"
+              ><ion-icon name="calendar-number-outline"></ion-icon
+            ></span>
+            <h3 class="font-serif pt-[15px]">24/7 Service</h3>
+            <p class="text-sm">
+              Need tiling service anytime? Were available around the clock to
+              handle urgent repairs or installation at your convenience. Your
+              comfort and satisfaction always comes first.
+            </p>
+          </div>
+
+          <div
+            class="md:h-[300px] h-[200px] mt-[20px] text-white flex flex-col place-content-end"
+          >
+            <span
+              class="text-3xl bg-orange-400 text-white w-[60px] h-[60px] flex items-center place-content-center rounded-2xl"
+              ><ion-icon name="rocket-outline"></ion-icon
+            ></span>
+            <h3 class="font-serif pt-[15px]">Fast & Reliable</h3>
+            <p class="text-sm">
+              We value your time, which is why we complete every project
+              efficiently without compromising quality. Our skilled team works
+              with precision to deliver exceptional results rights on schedule.
+            </p>
+          </div>
+
+          <div
+            class="md:h-[300px] h-[200px] mt-[20px] text-white flex flex-col place-content-end"
+          >
+            <span
+              class="text-3xl bg-orange-400 text-white w-[60px] h-[60px] flex items-center place-content-center rounded-2xl"
+              ><ion-icon name="card-outline"></ion-icon
+            ></span>
+            <h3 class="font-serif pt-[15px]">Competitive Pricing</h3>
+            <p class="text-sm">
+              Get top quality and best tiling prices of your choice that fit
+              your budget. We offer transparent quotes and honest rates, no
+              hidden cost , just execellent value for your money.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="w-full py-[80px] bg-black">
+      <div class="w-[95%] mx-auto flex gap-3 flex-col md:flex-row">
+        <div class="md:w-[50%] w-full pt-[40px]">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="500"
+            class="text-white font-serif font-semibold"
+          >
+            Tiling Solutions for your home or business
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="text-white text-[13px]"
+          >
+            Whether your're renovating your home or updgrading your business
+            space, we provide reliable tiling solutions tailored to your needs.
+            Our team combines skill, precision, and creativity to deliver
+            results that last.
+          </p>
+          <div class="flex flex-col md:flex-row gap-2">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              class="md:h-[160px] md:hidden lg:block md:w-[160px] mt-[20px]"
+            >
+              <img
+                class="h-[inherit] w-full rounded-2xl"
+                src="image/brick3.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                class="text-white flex items-center pt-[10px] gap-1"
+              >
+                <span class="text-2xl text-orange-500"
+                  ><ion-icon name="checkbox-outline"></ion-icon
+                ></span>
+                <p>Experienced and verified tiling experts.</p>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                class="text-white flex items-center pt-[15px] gap-1"
+              >
+                <span class="text-2xl text-orange-500"
+                  ><ion-icon name="checkbox-outline"></ion-icon
+                ></span>
+                <p>Quality materials and precise workmanship.</p>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                class="text-white flex items-center pt-[15px] gap-1"
+              >
+                <span class="text-2xl text-orange-500"
+                  ><ion-icon name="checkbox-outline"></ion-icon
+                ></span>
+                <p>On-time project delivery, every time.</p>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2500"
+                class="text-white flex items-center pt-[15px] gap-1"
+              >
+                <span class="text-2xl text-orange-500"
+                  ><ion-icon name="checkbox-outline"></ion-icon
+                ></span>
+                <p>Affordable rates with no hidden cost.</p>
+              </div>
+            </div>
+          </div>
+          <button
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="bg-orange-500 w-[100px] font-semibold flex place-content-center text-white duration-[0.5s] hover:bg-transparent hover:border border-orange-500 hover:text-orange-500 text-sm py-[7px] px-[10px] shadow rounded-2xl font-serif mt-[40px]"
+          >
+            <a class="text-sm flex items-center" href="">Book Now </a>
+          </button>
+        </div>
+        <div class="md:w-[50%] w-full h-[380px] grid grid-cols-2 gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            class="h-[380px] w-full"
+          >
+            <img
+              class="h-[inherit] rounded-2xl w-full"
+              src="image/brick3.jpg"
+              alt=""
+            />
+          </div>
+          <div class="h-[380px] w-full grid grid-cols-1 gap-2">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              class="w-full h-[186px]"
+            >
+              <img
+                class="h-[inherit] w-full rounded-2xl"
+                src="image/brick.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              class="w-full h-[186px]"
+            >
+              <img
+                class="h-[inherit] w-full rounded-2xl"
+                src="image/brick3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="w-full py-[15px] bg-black">
+      <div class="w-[95%] mx-auto">
+        <h2 class="text-white font-serif text-center text-xl capitalize">
+          Our Gallery
+        </h2>
+        <p class="text-[13px] text-white text-center">
+          Explore the variety of projects we've successfully delivered, each
+          showcasing our commitment to quality.
+        </p>
+        <div>
+          <div class="flex md:flex-row flex-col w-full gap-1 pt-[30px]">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              class="md:w-[50%] md:h-[300px] w-full"
+            >
+              <img
+                class="w-full h-[inherit] rounded-md border border-amber-900"
+                src="image/brick.jpg"
+                alt=""
+              />
+            </div>
+            <div class="md:w-[50%] md:h-[300px] w-full grid gap-1 grid-cols-2">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/brick.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/brick3.jpg"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="1500"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/tile1.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/tile2.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- first gallery  -->
+          <div class="flex md:flex-row flex-col w-full gap-1 pt-[4px]">
+            <div class="md:w-[50%] md:h-[300px] w-full grid gap-1 grid-cols-2">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/brick.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/brick3.jpg"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="1500"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/tile1.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                class="w-full h-[146px]"
+              >
+                <img
+                  class="w-full h-[inherit] rounded-md border border-amber-900"
+                  src="image/tile2.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              class="md:w-[50%] md:h-[300px] w-full"
+            >
+              <img
+                class="w-full h-[inherit] rounded-md border border-amber-900"
+                src="image/brick.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="reviews" class="w-full py-[80px] bg-black">
+      <div class="w-[95%] mx-auto">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="500"
+          class="text-white font-serif text-center text-xl pt-[30px] capitalize"
+        >
+          What Our Customers Say
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="text-[13px] text-white text-center"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In sed ut
+          veritatis incidunt praesentium quas.
+        </p>
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-3 pt-[20px]">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            class="w-full bg-orange-500 h-[250px] md:h-[300px] lg:h-[250px] rounded-2xl p-[10px]"
+          >
+            <div
+              class="w-full h-[90px] flex flex-row md:flex-col lg:flex-row md:items-start justify-between lg:items-center items-center"
+            >
+              <div class="flex gap-2">
+                <img
+                  class="h-[50px] w-[50px] rounded-xl"
+                  src="image/train1.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="text-white font-semibold">Melody Deviney</h4>
+                  <h5 class="text-white text-[13px]">knighton, Usa</h5>
+                </div>
+              </div>
+              <div>
+                <div class="flex bg-neutral-300 p-[4px] rounded-2xl px-[10px]">
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <p class="text-white text-[13px] pt-[10px]">
+              "They completely transformed my kitchen! The tiles were perfectly
+              aligned and beautifully finished. I was impressed by how quick
+              they completed the job without cutting corners. Highly recommend!"
+            </p>
+          </div>
+          <!-- one  -->
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            class="w-full bg-orange-500 h-[250px] md:h-[300px] lg:h-[250px] rounded-2xl p-[10px]"
+          >
+            <div
+              class="w-full h-[90px] flex flex-row md:flex-col lg:flex-row md:items-start justify-between lg:items-center items-center"
+            >
+              <div class="flex gap-2">
+                <img
+                  class="h-[50px] w-[50px] rounded-xl"
+                  src="image/train2.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="text-white font-semibold">James Okoro</h4>
+                  <h5 class="text-white text-[13px]">Lagos, Nigeria</h5>
+                </div>
+              </div>
+              <div>
+                <div class="flex bg-neutral-300 p-[4px] rounded-2xl px-[10px]">
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <!-- <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span> -->
+                </div>
+              </div>
+            </div>
+            <p class="text-white text-[13px] pt-[10px]">
+              "Professional, punctual, and detail-oriented. They handled my
+              bathroom renovation with such care and precision. The result looks
+              stunning, definitely worth every naira"
+            </p>
+          </div>
+          <!-- two  -->
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            class="w-full bg-orange-500 h-[250px] md:h-[300px] lg:h-[250px] rounded-2xl p-[10px]"
+          >
+            <div
+              class="w-full h-[90px] flex flex-row md:flex-col lg:flex-row md:items-start justify-between lg:items-center items-center"
+            >
+              <div class="flex gap-2">
+                <img
+                  class="h-[50px] w-[50px] rounded-xl"
+                  src="image/train1.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="text-white font-semibold">Sarah Thompson</h4>
+                  <h5 class="text-white text-[13px]">Manchester, Uk</h5>
+                </div>
+              </div>
+              <div>
+                <div class="flex bg-neutral-300 p-[4px] rounded-2xl px-[10px]">
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                  <span class="text-yellow-500"
+                    ><ion-icon name="star-sharp"></ion-icon
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <p class="text-white text-[13px] pt-[10px]">
+              "Execellent service from start to finish. The team helped me
+              choose the right tiles and delivered a clean, mordern look.
+              Communication was great throughout. I'll surely hire them again"
+            </p>
+          </div>
+          <!-- three  -->
+        </div>
+      </div>
+    </section>
+    <section class="w-full bg-orange-500 py-[40px]">
+      <div class="w-[95%] mx-auto">
+        <div
+          class="lg:h-[250px] md:h-[250px] h-[500px] bg-black mt-[30px] flex flex-col md:flex-row gap-2 rounded-2xl place-content-center items-center"
+        >
+          <div
+            class="md:w-[30%] w-full relative h-[250px] md:h-[250px] flex place-content-center lg:block lg:place-content-start"
+          >
+            <img
+              class="absolute md:w-[350px] md:h-[400px] h-[400px] bottom-0 w-[320px]"
+              src="image/vic-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="md:w-[70%] w-full flex flex-col place-content-center md:place-content-start p-[10px] lg:p-[5px]"
+          >
+            <h2 class="text-white font-serif text-2xl font-semibold">
+              Subscribe Our Newsletter
+            </h2>
+            <p class="text-[13px] text-white lg:w-[600px] pt-[10px]">
+              We love sharing great tiling ideas from creative designs and
+              renovation inspiration to helpful maintainance tips that keeps
+              your tiles looking brand new. By subscribing, you'll also get
+              access to exclusive discounts and behind the scenes updates from
+              our team. Its our way of helping you create the perfect home or
+              workspace.
+            </p>
+            <div
+              class="bg-neutral-300 p-[5px] px-[10px] w-[300px] rounded-3xl mt-[20px] flex justify-between"
+            >
+              <input
+                class="bg-transparent text-sm text-black outline-none placeholder:text-sm placeholder:text-black"
+                placeholder="Enter email address"
+                type="email"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-orange-500 text-white py-[4px] px-[10px] font-semibold rounded-2xl hover:text-orange-500 hover:bg-white duration-[0.5s] font-serif"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-orange-500 py-[30px] w-full">
+      <div class="grid lg:grid-cols-4 w-[95%] mx-auto py-[20px] grid-cols-1">
+        <div class="">
+          <span class="text-white text-lg font-bold py-[10px]">Vicmaro</span>
+          <p class="text-white text-[13px]">
+            Vicmaro's enterprise is a trusted name in quality tiling services,
+            dedicated to transforming homes and business with precision and
+            style. From expert installation to custom designs, our team delivers
+            lasting results that combine beauty and durability
+          </p>
+        </div>
+
+        <div class="lg:mx-auto">
+          <span class="text-white block text-lg font-bold py-[8px]"
+            >Explore</span
+          >
+          <a href="#home" class="text-white block text-sm py-[1px]">Home</a>
+          <a href="#about" class="text-white block text-sm py-[1px]">About</a>
+          <a href="#service" class="text-white block text-sm py-[1px]"
+            >Service</a
+          >
+          <a href="#footer" class="text-white block text-sm py-[1px]"
+            >Contact</a
+          >
+        </div>
+
+        <div class="">
+          <span class="text-white block text-lg font-bold py-[8px]"
+            >Contacts</span
+          >
+          <a class="text-white block text-sm py-[1px]">Phone: 09027498384 </a>
+          <a href="#layers" class="text-white block text-sm py-[1px]"
+            >Email: VicmaroEnterprise@gmail.com
+          </a>
+          <a href="" class="text-white block text-sm py-[1px]">Repair</a>
+          <a href="#contact" class="text-white block text-sm py-[1px]"
+            >Installation</a
+          >
+        </div>
+
+        <div class="">
+          <span class="text-white text-lg font-bold py-[10px]">Vicmaro</span>
+          <p class="text-white text-[13px]">
+            With years of hands on experience and a passion for craftsmanship,
+            Vicmaro Enteprise takes pride in providing exceptional service at
+            every stage. We blend modern techniques, premium materials and
+            attention to detail
+          </p>
+        </div>
+      </div>
+      <hr class="w-[95%] mx-auto" />
+      <div class="flex py-[20px] w-[95%] mx-auto justify-between">
+        <p class="text-[12px] text-white">
+          &copy; Vicmaro &bull; 2025 All Rights Reserved
+        </p>
+        <p class="text-white text-[12px]">Tems&Condditions</p>
+      </div>
+      <hr class="w-[95%] mx-auto" />
+    </footer>
+    <script>
+      const nav_links = document.querySelector(".nav_links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        nav_links.classList.toggle("left-[0%]");
+      }
+    </script>
+    <script src="css/aos-master/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
